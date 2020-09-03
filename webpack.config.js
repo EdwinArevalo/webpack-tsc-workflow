@@ -40,7 +40,11 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader'
                 ]
-            }, 
+            },
+            {
+                test: /\.hbs$/,
+                use: 'handlebars-loader'
+            },
             {
                 test: /\.html$/,
                 use: [
@@ -56,8 +60,9 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            esModule: false,
-                            name: 'assets/[name].[ext]'
+                            name: '[name].[ext]',
+                            outputPath: 'assets/',
+                            useRelativePath: true
                         }
                     }
                 ]
@@ -67,7 +72,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
+            template: './src/index.hbs',
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
