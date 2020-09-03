@@ -5,7 +5,6 @@ const MinifyPlugin            = require("babel-minify-webpack-plugin");
 const { CleanWebpackPlugin }  = require('clean-webpack-plugin');
 const CopyPlugin              = require('copy-webpack-plugin');
 
-
 const path = require('path');
 
 
@@ -41,14 +40,14 @@ module.exports = {
                 exclude: /styles\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader',
+                    'css-loader', 
                     'sass-loader'
                 ]
             },
             {
                 test: /styles\.css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    MiniCssExtractPlugin.loader, 
                     'css-loader'
                 ]
             }, 
@@ -76,7 +75,7 @@ module.exports = {
                             useRelativePath: true
                         }
                     },
-                    {
+                    {  
                         loader: 'image-webpack-loader',
                         options: {
                           mozjpeg: {
