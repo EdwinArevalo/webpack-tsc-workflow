@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf ./dist",
     "build": "webpack --config webpack.prod.js",
     "build:dev": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --open --port=9000"
