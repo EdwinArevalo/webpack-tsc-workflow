@@ -12,7 +12,7 @@ module.exports = {
         extensions: ['.ts','.js','.json']
     },
     optimization: {
-        minimizer: [ new OptimizeCssAssetsPlugin() ]
+        minimizer: [ new OptimizeCssAssetsPlugin({}) ]
     },
     output: {
         filename: 'main.[contentHash].js',
@@ -26,11 +26,12 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
+                test: /\.(sa|sc|c)ss$/,
                 exclude: /styles\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             {

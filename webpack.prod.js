@@ -16,7 +16,7 @@ module.exports = {
         extensions: ['.ts','.js','.json']
     },
     optimization: {
-        minimizer: [ new OptimizeCssAssetsPlugin() ]
+        minimizer: [ new OptimizeCssAssetsPlugin({}) ]
     },
     output: {
         filename: 'main.[contentHash].js',
@@ -37,11 +37,12 @@ module.exports = {
                 ]
             },
             {
-                test: /\.css$/,
+                test: /\.(sa|sc|c)ss$/,
                 exclude: /styles\.css$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader'
                 ]
             },
             {
@@ -78,7 +79,15 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
-            filename: './index.html'
+            filename: './index.html',
+            minify: {
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                removeScriptTypeAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                useShortDoctype: true
+            }
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contentHash].css',

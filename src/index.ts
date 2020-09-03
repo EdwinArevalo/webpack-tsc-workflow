@@ -1,5 +1,5 @@
-import './styles.css';
-import './css/main.css';
+import './styles.css'; 
+import './sass/component.scss';
   
 
 const root: Element = document.getElementsByClassName("root")[0];
