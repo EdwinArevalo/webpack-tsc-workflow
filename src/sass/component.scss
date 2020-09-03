@@ -1,8 +1,10 @@
+@import 'colors.scss';
+
 body {
     font-family: "Lucida Console", Courier, monospace;
 }
 
 .root {
-    color: #707070;
+    color: $mateColor;
     font-size: 20px;
 }
