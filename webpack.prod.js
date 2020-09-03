@@ -95,7 +95,7 @@ module.exports = {
             }
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contentHash].css',
+            filename: 'css/[name]-styles.[contentHash].css',
             ignoreOrder: false
         }),
         new MinifyPlugin(),

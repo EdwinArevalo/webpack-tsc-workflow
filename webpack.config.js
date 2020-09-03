@@ -76,7 +76,7 @@ module.exports = {
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css',
+            filename: 'css/[name]-styles.css',
             ignoreOrder: false
         }),
         new CopyPlugin({
