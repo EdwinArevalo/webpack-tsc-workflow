@@ -1,4 +1,4 @@
-# My Webpack Workflow 
+# Webpack Workflow 
 
 Webpack project with typescript
 ![Captura de pantalla de 2020-09-03 01-40-41](https://user-images.githubusercontent.com/50382935/92080747-a3a3a480-ed87-11ea-81a6-de6c230de9e2.png)
